@@ -1,6 +1,8 @@
-# arguments
-$aesKey = '155351351315315555553515'
-$callbackUrl = 'http://192.168.2.102/'
+# script parameters
+param (
+    [Parameter(Mandatory=$false)][string]$aesKey = '4t7w!z%C*F-JaNdRgUkXp2s5u8x/A?D(',
+    [Parameter(Mandatory=$false)][string]$callbackUrl = 'http://0.0.0.0/',
+ )
 
 function Get-StringHash([String] $String, $HashName = "SHA512")
 {
@@ -13,7 +15,7 @@ function Get-StringHash([String] $String, $HashName = "SHA512")
 
 function Publish-Update($output)
 {
-	$outputSecureString = [string] $output | ConvertTo-SecureString -AsPlainText -Force
+	$outputSecureString = [string]$output | ConvertTo-SecureString -AsPlainText -Force
 	$cipherText = $outputSecureString | ConvertFrom-SecureString -key $aesKey.byteArray
 
 	$body = @{
@@ -36,6 +38,5 @@ while ($true) {
 	}
 
 	$hash = $newHash
-	echo "Sleeping..."
 	Start-Sleep -Second 10
 }
